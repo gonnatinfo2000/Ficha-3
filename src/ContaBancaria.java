@@ -5,14 +5,14 @@ import java.util.Date;
 public class ContaBancaria extends Banco{
 
 		private String titular;
-		private double saldo = 0.00;
+		private double saldo = 0.00f;
 		private LocalDate dataAbertura = LocalDate.now();
 		
 		public ContaBancaria(String aTitular) {
 			super(aTitular);
 			titular = aTitular;
 			dataAbertura = LocalDate.now();
-			saldo = 0.00;
+			saldo = 0.00f;
 		}
 
 		public double getSaldo() {
@@ -33,8 +33,7 @@ public class ContaBancaria extends Banco{
 		
 		public String getInformacaoConta() {
 		    DateTimeFormatter FormatDate = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		    FormatDate.format(dataAbertura);
-		    String informacao = "Titular: " + titular + "\nSaldo: €" + saldo + "\nData Abertura: " + dataAbertura;
+		    String informacao = "Titular: " + titular + "\nSaldo: €" + String.format("%.2f", saldo) + "\nData Abertura: " + FormatDate.format(dataAbertura);
 		    return informacao;
 		}
 		
@@ -52,7 +51,7 @@ public class ContaBancaria extends Banco{
 		
 		public static void main(String[] args) {
 			ContaBancaria conta = new ContaBancaria("Gonçalo");
-			conta.depositar(5.00);
+			conta.depositar(5.99);
 			System.out.println(conta.getInformacaoConta());
 			conta.levantar(4.00);
 			System.out.println(conta.getInformacaoConta());
