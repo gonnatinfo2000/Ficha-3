@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -33,7 +35,8 @@ public class ContaBancaria extends Banco{
 		
 		public String getInformacaoConta() {
 		    DateTimeFormatter FormatDate = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		    String informacao = "Titular: " + titular + "\nSaldo: €" + String.format("%.2f", saldo) + "\nData Abertura: " + FormatDate.format(dataAbertura);
+		    DecimalFormat twoDecimalFormatter = new DecimalFormat("#0.00");
+		    String informacao = "Titular: " + titular + "\nSaldo: €" + twoDecimalFormatter.format(saldo) + "\nData Abertura: " + FormatDate.format(dataAbertura);
 		    return informacao;
 		}
 		
