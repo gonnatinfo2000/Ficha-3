@@ -1,13 +1,13 @@
 
 public class Casa extends Banco{
+	private static String aNome;
 	private String morada;
 	private double precoCusto;
 	private double precoVenda;
 	
-	// public Casa() {}
-
 	public Casa(String aMorada) {
-		super(aMorada);
+		super(aNome);
+		this.morada = aMorada;
 	}
 
 	public String getMorada() {

@@ -1,20 +1,18 @@
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
-public class ContaBancaria extends Banco{
+public class ContaBancaria extends Banco {
 
 		private String titular;
-		private double saldo = 0.00f;
+		private double saldo = 0.0f;
 		private LocalDate dataAbertura = LocalDate.now();
 		
 		public ContaBancaria(String aTitular) {
 			super(aTitular);
 			titular = aTitular;
 			dataAbertura = LocalDate.now();
-			saldo = 0.00f;
+			saldo = 0;
 		}
 
 		public double getSaldo() {

@@ -33,8 +33,12 @@ public class Banco {
 		contasBancarias.add(contaBancaria);
 	}
 	
-	public List<ContaBancaria> getConta(String titular) {
-		return getContasBancarias();
+	public String getConta(String titular) {
+		String informacao = "";
+		for(ContaBancaria conta: contasBancarias) {
+			informacao = conta.getInformacaoConta();
+		}
+		return informacao;
 	}
 	
 	public void adicionarCasa(Casa casa) {
@@ -58,9 +62,9 @@ public class Banco {
 		conta.criaConta(conta);
 		System.out.println(conta.getConta(conta.getTitular()));
 		conta.depositar(7.00);
-		System.out.println(conta.getInformacaoConta());
+		System.out.println(conta.getConta(conta.getTitular()));
 		conta.levantar(3.50);
-		System.out.println(conta.getInformacaoConta());
+		System.out.println(conta.getConta(conta.getTitular()));
 		conta.levantar(6.00);
 		
 		Casa casa1 = new Casa("Cidade Zaachi");
