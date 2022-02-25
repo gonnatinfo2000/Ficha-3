@@ -9,5 +9,5 @@ Uma **conta bancária** tem um ***titular***, um ***saldo*** e uma ***data de ab
 
 Uma casa tem uma ***morada***, um ***preco de custo*** e um ***preco de venda***. Pode ser obtida a margem do lucro (diferença entre o preço de venda e o preço de custo) e a sua respetiva percentagem (razão entre o preço de venda e o preço de custo).
 
-![UML](Diagrama_UML.drawio.png)
+![UML](Diagrama_UML.png)
 
