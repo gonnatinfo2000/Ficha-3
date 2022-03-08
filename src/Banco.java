@@ -33,12 +33,15 @@ public class Banco {
 		contasBancarias.add(contaBancaria);
 	}
 	
-	public String getConta(String titular) {
-		String informacao = "";
+	public ContaBancaria getConta(String titular) {
 		for(ContaBancaria conta: contasBancarias) {
-			informacao = conta.getInformacaoConta();
+			if(conta.getTitular().equalsIgnoreCase(titular)){
+				return conta;
+			}else{
+				System.out.println("Não foi encontrada uma conta com " + titular + " com titular.");
+			}
 		}
-		return informacao;
+		return null;
 	}
 	
 	public void adicionarCasa(Casa casa) {
@@ -82,6 +85,10 @@ public class Banco {
 		conta.adicionarCasa(casa1);
 		conta.adicionarCasa(casa2);
 		conta.adicionarCasa(casa3);
+		
+		conta.receberMorada(casa1.getMorada());
+		
+		conta.adicionarCasa(casa1);
 		
 		System.out.println(conta.getLucroPrevisto());
 	}
